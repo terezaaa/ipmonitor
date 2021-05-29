@@ -6,18 +6,6 @@
 
 #define DEFAULT_THREAD_POOL_SIZE 100
 
-void distribute(const int poolSize, int listSize) {
-    std::vector<RoutineScope *> scope;
-
-    int offset = poolSize > listSize ? 1 : listSize / poolSize;
-
-    int c = 0;
-    while (c < listSize) {
-        std::cout << c << " " << ((c + offset) < listSize ? (c + offset):listSize) << std::endl;
-        c += offset;
-    }
-}
-
 std::vector<IpStatus> ipList(char *fileName) {
     std::vector<IpStatus> list;
 
